@@ -21,11 +21,11 @@ def generate_launch_description():
                 )]), launch_arguments={'use_sim_time': 'true'}.items() # , 'use_ros2_control': 'true'
     )
 
-    #camera = IncludeLaunchDescription(
-    #            PythonLaunchDescriptionSource([os.path.join(
-    #                get_package_share_directory(package_name),'launch','camera.launch.py'
-    #            )]) 
-    #)
+    camera = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory(package_name),'launch','camera.launch.py'
+                )]) 
+    )
 
     #joystick = IncludeLaunchDescription(
     #            PythonLaunchDescriptionSource([os.path.join(
@@ -45,7 +45,7 @@ def generate_launch_description():
     # Run the spawner node from the gazebo_ros package. The entity name doesn't really matter if you only have a single robot.
     spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
                         arguments=['-topic', 'robot_description',
-                                   '-entity', 'pulsepusher',"-Y","-1.57"],
+                                   '-entity', 'pulsepusher'], # , "-Y","-1.57"
                         output='screen')
 
 
@@ -83,7 +83,7 @@ def generate_launch_description():
     # Launch them all!
     return LaunchDescription([
         rsp,
-        # camera,
+        camera,
         # joystick,
         gazebo,
         spawn_entity,
