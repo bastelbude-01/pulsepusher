@@ -39,32 +39,32 @@
     <joint name="cassis_joint" type="fixed">
         <parent link="base_link"/>
         <child link="chassis"/>
-        <origin xyz="-0.093 0.0 0.0"/>
+        <origin xyz="0.0 0.0 0.0"/>
         
     </joint>
 
 
     <link name="chassis">
         <visual>
-            <origin xyz="0.093 0.0 0.02"/>
+            <origin xyz="0 0 0.0"/>
             <geometry>
-                <cylinder radius="0.093" length="0.045"/>
+                <box size="0.47 0.13 0.1"/>
             </geometry>
             <material name="orange"/>
         </visual>
         <collision>
             <origin xyz="0.093 0.0 0.075"/>
             <geometry>
-                <cylinder radius="0.093" length="0.045"/>
+                <box size="0.47 0.13 0.1"/>
             </geometry>            
         </collision>
-        <xacro:inertial_cylinder mass="0.5" length="0.045" radius="0.093">
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        </xacro:inertial_cylinder>
+        <xacro:inertial_box mass="0.3" x="0.47" y="0.12" z="0.1">
+            <origion xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </xacro:inertial_box> 
     </link>
 
     <gazebo reference="chassis">
-        <material>Gazebo/Orange</material>
+        <material>Gazebo/Black</material>
     </gazebo>
 
         <!-- LEFT WHEEL LINK -->
@@ -191,7 +191,7 @@
         <mu2 value="0.001"/>
     </gazebo>
 
-    <!-- Body Part -->
+    <!-- Body Part 
 
     <link name="body">
         <visual>
@@ -218,63 +218,9 @@
         <parent link="base_link"/>
         <child link="body"/>
         <origin xyz="0.0 0.0 0.21"/>        
-    </joint>
+    </joint>-->
     
-    <!-- LCD DISPLAY and In_display  -->
 
-    <link name="display">
-        <visual>
-            <geometry>
-                <box size="0.09 0.09 0.05"/>
-            </geometry>
-            <material name="black"/>
-        </visual>
-        <collision>
-            <geometry>
-                <box size="0.09 0.09 0.03"/>
-            </geometry>            
-        </collision>
-        <xacro:inertial_box mass="0.1" x="0.09" y="0.09" z="0.05">
-            <origion xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        </xacro:inertial_box> 
-    </link>
-
-    <gazebo reference="display">
-        <material>Gazebo/Black</material>
-    </gazebo>
-
-    <joint name="display_body_joint" type="fixed">
-        <origin xyz="0.08 0.0 0.11" rpy="0 0.0 0.0"/>
-        <parent link="body"/>
-        <child link="display"/>
-    </joint>
-
-    <link name="in_display">
-        <visual>
-            <geometry>
-                <box size="0.09 0.07 0.03"/>
-            </geometry>
-            <material name="green"/>
-        </visual>
-        <collision>
-            <geometry>
-                <box size="0.09 0.07 0.03"/>
-            </geometry>            
-        </collision>
-        <xacro:inertial_box mass="0.1" x="0.09" y="0.09" z="0.03">
-            <origion xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        </xacro:inertial_box> 
-    </link>
-
-    <gazebo reference="in_display">
-        <material>Gazebo/Green</material>
-    </gazebo>
-
-    <joint name="in_display_body_joint" type="fixed">
-        <origin xyz="0.085 0.0 0.11" rpy="0 0.0 0.0"/>
-        <parent link="body"/>
-        <child link="in_display"/>
-    </joint>
 
 
 </robot>
