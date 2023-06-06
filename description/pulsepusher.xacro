@@ -123,14 +123,19 @@
 
     <gazebo reference="left_wheel">
         <material>Gazebo/Blue</material>
+        <mu1 value="100000000000000.0" /><!-- 0.001-->
+        <mu2 value="100000000000000.0" />
+        <kp value="1000000000000.0" />
+        <kd value="10"/>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
     </gazebo>
 
-    <joint name="left_wheel_joint_f" type="continuous">
+    <joint name="left_wheel_joint_f" type="fixed">
         <origin xyz="0.15 0.085 0.0" rpy="-${pi/2} 0.0 0.0" />
         <parent link="base_link" />
         <child link="left_wheel_f" />
-        <axis xyz="0.0 0.0 1.0" />
-        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0" />
     </joint>
 
     <link name="left_wheel_f">
@@ -152,14 +157,19 @@
 
     <gazebo reference="left_wheel_f">
         <material>Gazebo/Blue</material>
+        <mu1 value="0.1" /><!-- 0.001-->
+        <mu2 value="0.1" />
+        <kp value="1000000.0" />
+        <kd value="10"/>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
     </gazebo>
 
-    <joint name="left_wheel_joint_r" type="continuous">
+    <joint name="left_wheel_joint_r" type="fixed">
         <origin xyz="-0.15 0.085 0.0" rpy="-${pi/2} 0.0 0.0" />
         <parent link="base_link" />
         <child link="left_wheel_r" />
-        <axis xyz="0.0 0.0 1.0" />
-        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0" />
     </joint>
 
     <link name="left_wheel_r">
@@ -181,6 +191,13 @@
 
     <gazebo reference="left_wheel_r">
         <material>Gazebo/Blue</material>
+        <mu1 value="0.1" /><!-- 0.001-->
+        <mu2 value="0.1" />
+        <kp value="1000000.0" />
+        <kd value="10"/>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
     </gazebo>
 
 
@@ -212,14 +229,19 @@
 
     <gazebo reference="right_wheel">
         <material>Gazebo/Blue</material>
+        <mu1 value="100000000000000.0" /><!-- 0.001-->
+        <mu2 value="100000000000000.0" />
+        <kp value="1000000000000.0" />
+        <kd value="10"/>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
     </gazebo>
 
-    <joint name="right_wheel_joint_f" type="continuous">
+    <joint name="right_wheel_joint_f" type="fixed">
         <origin xyz="0.15 -0.085 0.0" rpy="${pi/2} 0.0 0.0" />
         <parent link="base_link" />
         <child link="right_wheel_f" />
-        <axis xyz="0.0 0.0 -1.0" />
-        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0" />
     </joint>
 
     <link name="right_wheel_f">
@@ -241,14 +263,19 @@
 
     <gazebo reference="right_wheel_f">
         <material>Gazebo/Blue</material>
+        <mu1 value="0.1" /><!-- 0.001-->
+        <mu2 value="0.1" />
+        <kp value="1000000.0" />
+        <kd value="10"/>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
     </gazebo>
 
-    <joint name="right_wheel_joint_r" type="continuous">
+    <joint name="right_wheel_joint_r" type="fixed">
         <origin xyz="-0.15 -0.085 0.0" rpy="${pi/2} 0.0 0.0" />
         <parent link="base_link" />
         <child link="right_wheel_r" />
-        <axis xyz="0.0 0.0 -1.0" />
-        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0" />
     </joint>
 
     <link name="right_wheel_r">
@@ -270,6 +297,13 @@
 
     <gazebo reference="right_wheel_r">
         <material>Gazebo/Blue</material>
+        <mu1 value="0.1" /><!-- 0.001-->
+        <mu2 value="0.1" />
+        <kp value="1000000.0" />
+        <kd value="10"/>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
     </gazebo>
 
 </robot>

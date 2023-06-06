@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <gazebo>
+        <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+            <updateRate>100.0</updateRate>
+            <robotNamespace>/pulsepusher</robotNamespace>
+            <leftFrontJoint>left_wheel_joint_f</leftFrontJoint>
+            <rightFrontJoint>right_wheel_joint_f</rightFrontJoint>
+            <leftRearJoint>left_wheel_joint_r</leftRearJoint>
+            <rightRearJoint>right_wheel_joint_r</rightRearJoint>
+            <wheelSeparation>0.17</wheelSeparation>
+            <wheelDiameter>0.07</wheelDiameter>
+            <robotBaseFrame>base_link</robotBaseFrame>
+            <torque>20</torque>
+            <topicName>cmd_vel</topicName>
+            <broadcastTF>true</broadcastTF>
+        </plugin>
+    </gazebo>
+
+
+</robot>
