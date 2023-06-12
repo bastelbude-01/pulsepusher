@@ -2,6 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <xacro:include filename="inertial_macros.xacro" />
+    <xacro:include filename="pulse_gazebo.xacro" />
 
     <!-- Farben -->
 
@@ -121,17 +122,7 @@
         </xacro:inertial_cylinder>
     </link>
 
-    <gazebo reference="left_wheel">
-        <material>Gazebo/Blue</material>
-        <mu1 value="100000000000000.0" /><!-- 0.001-->
-        <mu2 value="100000000000000.0" />
-        <kp value="1000000000000.0" />
-        <kd value="10"/>
-        <minDepth>0.001</minDepth>
-        <maxVel>0.1</maxVel>
-        <fdir1>1 0 0</fdir1>
-    </gazebo>
-
+    
     <joint name="left_wheel_joint_f" type="fixed">
         <origin xyz="0.15 0.085 0.0" rpy="-${pi/2} 0.0 0.0" />
         <parent link="base_link" />
@@ -155,17 +146,7 @@
         </xacro:inertial_cylinder>
     </link>
 
-    <gazebo reference="left_wheel_f">
-        <material>Gazebo/Blue</material>
-        <mu1 value="0.1" /><!-- 0.001-->
-        <mu2 value="0.1" />
-        <kp value="1000000.0" />
-        <kd value="10"/>
-        <minDepth>0.001</minDepth>
-        <maxVel>0.1</maxVel>
-        <fdir1>1 0 0</fdir1>
-    </gazebo>
-
+    
     <joint name="left_wheel_joint_r" type="fixed">
         <origin xyz="-0.15 0.085 0.0" rpy="-${pi/2} 0.0 0.0" />
         <parent link="base_link" />
@@ -189,18 +170,7 @@
         </xacro:inertial_cylinder>
     </link>
 
-    <gazebo reference="left_wheel_r">
-        <material>Gazebo/Blue</material>
-        <mu1 value="0.1" /><!-- 0.001-->
-        <mu2 value="0.1" />
-        <kp value="1000000.0" />
-        <kd value="10"/>
-        <minDepth>0.001</minDepth>
-        <maxVel>0.1</maxVel>
-        <fdir1>1 0 0</fdir1>
-    </gazebo>
-
-
+    
     <!-- RIGHT WHEEL LINK -->
     <joint name="right_wheel_joint" type="continuous">
         <origin xyz="0.0 -0.085 0.0" rpy="${pi/2} 0.0 0.0" />
@@ -227,17 +197,7 @@
         </xacro:inertial_cylinder>
     </link>
 
-    <gazebo reference="right_wheel">
-        <material>Gazebo/Blue</material>
-        <mu1 value="100000000000000.0" /><!-- 0.001-->
-        <mu2 value="100000000000000.0" />
-        <kp value="1000000000000.0" />
-        <kd value="10"/>
-        <minDepth>0.001</minDepth>
-        <maxVel>0.1</maxVel>
-        <fdir1>1 0 0</fdir1>
-    </gazebo>
-
+    
     <joint name="right_wheel_joint_f" type="fixed">
         <origin xyz="0.15 -0.085 0.0" rpy="${pi/2} 0.0 0.0" />
         <parent link="base_link" />
@@ -261,17 +221,7 @@
         </xacro:inertial_cylinder>
     </link>
 
-    <gazebo reference="right_wheel_f">
-        <material>Gazebo/Blue</material>
-        <mu1 value="0.1" /><!-- 0.001-->
-        <mu2 value="0.1" />
-        <kp value="1000000.0" />
-        <kd value="10"/>
-        <minDepth>0.001</minDepth>
-        <maxVel>0.1</maxVel>
-        <fdir1>1 0 0</fdir1>
-    </gazebo>
-
+    
     <joint name="right_wheel_joint_r" type="fixed">
         <origin xyz="-0.15 -0.085 0.0" rpy="${pi/2} 0.0 0.0" />
         <parent link="base_link" />
@@ -295,15 +245,6 @@
         </xacro:inertial_cylinder>
     </link>
 
-    <gazebo reference="right_wheel_r">
-        <material>Gazebo/Blue</material>
-        <mu1 value="0.1" /><!-- 0.001-->
-        <mu2 value="0.1" />
-        <kp value="1000000.0" />
-        <kd value="10"/>
-        <minDepth>0.001</minDepth>
-        <maxVel>0.1</maxVel>
-        <fdir1>1 0 0</fdir1>
-    </gazebo>
+    
 
 </robot>

@@ -41,11 +41,11 @@ def generate_launch_description():
     
     # Deaktivate the L298N Driver for sim mode and on dev_ws without GPIO !!!
     
-    #l298n = IncludeLaunchDescription(
-    #            PythonLaunchDescriptionSource([os.path.join(
-    #                get_package_share_directory(package_name),'launch','l298n.launch.py'
-    #            )]) 
-    #)
+    l298n = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory(package_name),'launch','l298n.launch.py'
+                )]) 
+    )
 
     #joystick = IncludeLaunchDescription(
     #            PythonLaunchDescriptionSource([os.path.join(
@@ -97,7 +97,7 @@ def generate_launch_description():
         rsp,
         camera,
         lidar,
-        #l298n,
+        l298n,
         #joystick,
         delay_controller_manager,
         delayed_diff_drive_spawner,

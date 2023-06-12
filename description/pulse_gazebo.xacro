@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    
+    <gazebo reference="left_wheel">
+        <material>Gazebo/Blue</material>
+        <mu1 value="100000000000000.0" /><!-- 0.001-->
+        <mu2 value="100000000000000.0" />
+        <kp value="1000000000000.0" />
+        <kd value="10" />
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
+    </gazebo>
+
+    <gazebo reference="left_wheel_f">
+        <material>Gazebo/Blue</material>
+        <mu1 value="0.1" /><!-- 0.001-->
+        <mu2 value="0.1" />
+        <kp value="1000000.0" />
+        <kd value="100" />
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
+    </gazebo>
+
+    <gazebo reference="left_wheel_r">
+        <material>Gazebo/Blue</material>
+        <mu1 value="0.1" /><!-- 0.001-->
+        <mu2 value="0.1" />
+        <kp value="1000000.0" />
+        <kd value="100" />
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
+    </gazebo>
+
+    <gazebo reference="right_wheel">
+        <material>Gazebo/Blue</material>
+        <mu1 value="100000000000000.0" />
+        <mu2 value="100000000000000.0" />
+        <kp value="1000000000000.0" />
+        <kd value="10" />
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
+    </gazebo>
+
+    <gazebo reference="right_wheel_f">
+        <material>Gazebo/Blue</material>
+        <mu1 value="0.1" />
+        <mu2 value="0.1" />
+        <kp value="1000000.0" />
+        <kd value="100" />
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
+    </gazebo>
+
+    <gazebo reference="right_wheel_r">
+        <material>Gazebo/Blue</material>
+        <mu1 value="0.1" />
+        <mu2 value="0.1" />
+        <kp value="1000000.0" />
+        <kd value="100" />
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
+    </gazebo>
+
+
+</robot>
