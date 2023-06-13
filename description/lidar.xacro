@@ -2,6 +2,28 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
         <!-- LIDAR -->
+        <link name="lidar_mount">
+        <visual>
+            <geometry>
+                <box size="0.03 0.03 0.03"/>
+            </geometry>
+            <material name="orange"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.03 0.03 0.03"/>
+            </geometry>            
+        </collision>
+        <xacro:inertial_box mass="0.1" x="0.03" y="0.03" z="0.03">
+            <origion xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </xacro:inertial_box> 
+        </link>
+
+        <joint name="lidar_mount_joint" type="fixed">
+        <origin xyz="-0.04 0.0 0.04" rpy="0 0 0"/>
+        <parent link="turm_top_"/>
+        <child link="lidar_mount"/>
+        </joint>
 
         <link name="laser_frame">
             <visual>
@@ -26,9 +48,9 @@
         </gazebo>
     
         <joint name="laser_joint" type="fixed">
-            <parent link="base_link"/>
+            <parent link="lidar_mount"/>
             <child link="laser_frame"/>
-            <origin xyz="0.0 0.0 0.4" rpy="0.0 0.0 -1.57"/>        
+            <origin xyz="0.0 0.0 0.02" rpy="0.0 0.0 -1.57"/>        
         </joint>
 
 
