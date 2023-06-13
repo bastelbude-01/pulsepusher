@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="inertial_macros.xacro" />
+
+        <!-- Turm Auflage-->
+    <joint name="fixirung" type="fixed">
+        <origin xyz="0.05 0.0 0.07" rpy="0.0 0.0 0.0" />
+        <parent link="base_link" />
+        <child link="turret_coil" />
+    </joint>
+
+    <link name="turret_coil">
+        <visual>
+            <geometry>
+                <cylinder radius="0.06" length="0.005" />
+            </geometry>
+            <material name="yellow" />
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.06" length="0.005" />
+            </geometry>
+        </collision>
+        <xacro:inertial_cylinder mass="0.1" length="0.005" radius="0.06">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        </xacro:inertial_cylinder>
+    </link>
+
+    <joint name="turret_coil_joint" type="continuous">
+        <origin xyz="0.0 0.0 0.005" rpy="0.0 0.0 0.0" />
+        <parent link="turret_coil" />
+        <child link="turret_coil_" />
+        <axis xyz="0.0 0.0 -1.0" />
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0" />
+    </joint>
+
+    <link name="turret_coil_">
+        <visual>
+            <geometry>
+                <cylinder radius="0.06" length="0.005" />
+            </geometry>
+            <material name="white" />
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.06" length="0.005" />
+            </geometry>
+        </collision>
+        <xacro:inertial_cylinder mass="0.1" length="0.005" radius="0.06">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        </xacro:inertial_cylinder>
+    </link>
+
+        <!-- Turm -->
+
+    <joint name="turm_top_joint" type="fixed">
+        <parent link="turret_coil_" />
+        <child link="turm_top_" />
+        <origin xyz="-0.08 0.0 0.025" />
+    </joint>
+
+    <link name="turm_top_">
+        <visual>
+            <geometry>
+                <box size="0.28 0.17 0.05" />
+            </geometry>
+            <material name="white" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.28 0.17 0.05" />
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.1" x="0.28" y="0.17" z="0.05">
+            <origion xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="turm_top_left" type="fixed">
+        <parent link="turm_top_" />
+        <child link="turm_top_l" />
+        <origin xyz="0.17 0.05 0.0" />
+    </joint>
+
+    <link name="turm_top_l">
+        <visual>
+            <geometry>
+                <box size="0.1 0.07 0.05" />
+            </geometry>
+            <material name="white" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.1 0.07 0.05" />
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.1" x="0.1" y="0.07" z="0.05">
+            <origion xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="turm_top_right" type="fixed">
+        <parent link="turm_top_" />
+        <child link="turm_top_r" />
+        <origin xyz="0.17 -0.05 0.0" />
+    </joint>
+
+    <link name="turm_top_r">
+        <visual>
+            <geometry>
+                <box size="0.1 0.07 0.05" />
+            </geometry>
+            <material name="white" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.1 0.07 0.05" />
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.1" x="0.1" y="0.07" z="0.05">
+            <origion xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        </xacro:inertial_box>
+    </link>
+    
+
+</robot>
