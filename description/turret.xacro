@@ -27,12 +27,10 @@
         </xacro:inertial_cylinder>
     </link>
 
-    <joint name="turret_coil_joint" type="continuous">
+    <joint name="turret_coil_joint" type="fixed"> <!-- change to moving if - dies ist der joint für den turm -->
         <origin xyz="0.0 0.0 0.005" rpy="0.0 0.0 0.0" />
         <parent link="turret_coil" />
         <child link="turret_coil_" />
-        <axis xyz="0.0 0.0 -1.0" />
-        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0" />
     </joint>
 
     <link name="turret_coil_">
